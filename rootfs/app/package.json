@@ -1,0 +1,15 @@
+{
+  "name": "e2transcoder",
+  "version": "1.0.0",
+  "description": "Stream transcoding proxy for Enigma2 receivers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jannis Pohl <me@mavedev.com>",
+  "license": "ISC",
+  "dependencies": {
+    "http-auth": "^2.2.8",
+    "stream-transcoder": "0.0.5"
+  }
+}

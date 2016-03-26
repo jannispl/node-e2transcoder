@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sed -i "s/%ENIGMA_HOST%/${ENIGMA_HOST}/" /etc/nginx/nginx.conf
+sed -i "s/%ENIGMA_HTTP_PORT%/${ENIGMA_HTTP_PORT}/" /etc/nginx/nginx.conf
+
+trap 'kill -TERM $NGINX_PID' TERM
+nginx -g 'daemon off;' &
+NGINX_PID=$!
+
+trap 'kill -TERM $NODE_PID' TERM
+node /app &
+NODE_PID=$!
+
+wait
